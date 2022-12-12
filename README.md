@@ -6,8 +6,6 @@ Created Date: 12 Dec 2022
 Python EXECUTION: Run `conversation.py` to run the bot<br>
 Web api EXECUTION: Run `bot.py`, once it runs, open the link and start chatting with the bot... <br>
 
-## DEMO
-![chatbotgif](https://github.com/pemagrg1/Easy-Chatbot/blob/master/multimedia/pema.gif)
 
 # Easy Chatbot using AIML
 
