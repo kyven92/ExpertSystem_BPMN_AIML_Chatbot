@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Chatbot COVID TIPS</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link type="text/css" rel="stylesheet" href="static/style.css"/>
+
+    <meta http-equiv="Cache-control" content="no-cache">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="d-none d-md-block">
+    <header><h4>ADAPTIVE CHATBOT </h4></header>
+</div>
+
+<div class="columnsContainer">
+
+    <div class="leftColumn">
+        <div id="formwrapper">
+            <div id="menu">
+                <p class="welcome"><h5>Adaptive Chatbot</h5><b></b></p>
+            </div>
+
+            <div id="chatbox"></div>
+
+            <form name="message" action="">
+                <div class="container-fluid">
+                    <input name="usermsg" type="text" id="usermsg"/>
+                    <input name="submitmsg" type="submit" id="submitmsg" value=">"/>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="rightColumn d-none d-md-block">
+
+        <div class="d-none d-md-block">
+            <center>
+                <video id="myvid" src="static/video/talk.webm" autoplay></video>
+            </center>
+        </div>
+<hr/>
+        <div class="d-none d-md-block">
+            <input type="checkbox" id="checkcomvoz" name="checkcomvoz" value="voz ativa"/>
+            <label for="checkcomvoz">active voice</label>
+        </div>
+
+        <div class="d-none d-md-block">
+            <input type="checkbox" id="checkcomavatar" name="checkcomavatar" value="voz ativa"/>
+            <label for="checkcomvoz">active avatar</label>
+        </div>
+<hr/>
+        <div id="upload" class="d-none d-md-block">
+            <form action="uploader" method="POST"
+                  enctype="multipart/form-data">
+                <input type="file" name="file" value="load .bpmn"/>
+                <p></p>
+                <input type="submit" value="upload"/>
+            </form>
+        </div>
+<hr/>
+        <form action="downloadaiml" method="POST"
+                  enctype="multipart/form-data">
+                <input type="submit" value="download .aiml"/>
+        </form>
+<hr/>
+        <form action="downloadbpmn" method="POST"
+                  enctype="multipart/form-data">
+                <input type="submit" value="download .bpmn"/>
+        </form>
+<hr/>
+        <div id="apagar" class="d-none d-md-block">
+            <form action="apagar" method="POST"
+                  enctype="multipart/form-data">
+                <input type="submit" value="delete files"/>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/speech-to-text@0.7.4/lib/index.js"></script>
+
+<script type="text/javascript" src="static/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="static/y-bot.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

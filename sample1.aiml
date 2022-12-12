@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiml>
+    <topic name="BEGINNINGEVENT1">
+        <category>
+            <pattern>ACTIVITY0AZ0YNV</pattern>
+            <template>WHICH PLACE YOU WANT TO VISIT? HP OR AP ? </template>
+        </category>
+        <category>
+            <pattern>HP</pattern>
+            <that>* WHICH PLACE YOU WANT TO VISIT HP OR AP </that>
+            <template>HIMACHAL PRADESH <srai>ACTIVITY1OIGSQX</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>ACTIVITY1OIGSQX</pattern>
+            <template>BY FLIGHT <srai>ACTIVITY0FERWCK</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>ACTIVITY0FERWCK</pattern>
+            <template>
+                <think>
+                    <set name="topic"></set>
+                </think>
+            </template>
+        </category>
+        <category>
+            <pattern>AP</pattern>
+            <that>* WHICH PLACE YOU WANT TO VISIT HP OR AP </that>
+            <template>AP <srai>ACTIVITY0UZNDHV</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>ACTIVITY0UZNDHV</pattern>
+            <template>BY FLIGHT <srai>ACTIVITY0FERWCK</srai>
+            </template>
+        </category>
+    </topic>
+    <category>
+        <pattern>WHERE IS HYDERABAD</pattern>
+        <template>
+            <think>
+                <set name="topic">BEGINNINGEVENT1</set>
+            </think>IT IS IN INDIA! <srai>ACTIVITY0AZ0YNV</srai>
+        </template>
+    </category>
+</aiml>
