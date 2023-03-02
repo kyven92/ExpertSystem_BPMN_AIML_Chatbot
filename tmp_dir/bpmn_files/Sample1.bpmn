@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0n6fw3o" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.5.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <bpmn:process id="Process_0u18rut" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Demo">
+      <bpmn:outgoing>Flow_0g8r05t</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_12baurb" name="Choose yes or no">
+      <bpmn:incoming>Flow_0g8r05t</bpmn:incoming>
+      <bpmn:outgoing>Flow_19ytzx1</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1vtv4d7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0g8r05t" sourceRef="StartEvent_1" targetRef="Gateway_12baurb" />
+    <bpmn:task id="Activity_1ptzcqt" name="Your Choice is &#34;Yes&#34;">
+      <bpmn:incoming>Flow_19ytzx1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1frzcau</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_19ytzx1" name="yes" sourceRef="Gateway_12baurb" targetRef="Activity_1ptzcqt" />
+    <bpmn:task id="Activity_1rnw4gw" name="Your choice is &#34;No&#34;">
+      <bpmn:incoming>Flow_1vtv4d7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ybpnhm</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1vtv4d7" name="no" sourceRef="Gateway_12baurb" targetRef="Activity_1rnw4gw" />
+    <bpmn:exclusiveGateway id="Gateway_17co0nu">
+      <bpmn:incoming>Flow_1ybpnhm</bpmn:incoming>
+      <bpmn:incoming>Flow_1frzcau</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ifnklz</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1ybpnhm" sourceRef="Activity_1rnw4gw" targetRef="Gateway_17co0nu" />
+    <bpmn:sequenceFlow id="Flow_1frzcau" sourceRef="Activity_1ptzcqt" targetRef="Gateway_17co0nu" />
+    <bpmn:task id="Activity_1m5sdt1" name="This is a demo test">
+      <bpmn:incoming>Flow_1ifnklz</bpmn:incoming>
+      <bpmn:outgoing>Flow_1k31swx</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1ifnklz" sourceRef="Gateway_17co0nu" targetRef="Activity_1m5sdt1" />
+    <bpmn:endEvent id="Event_1o80xj4">
+      <bpmn:incoming>Flow_1k31swx</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1k31swx" sourceRef="Activity_1m5sdt1" targetRef="Event_1o80xj4" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0u18rut">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="222" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="155" y="265" width="30" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_12baurb_di" bpmnElement="Gateway_12baurb" isMarkerVisible="true">
+        <dc:Bounds x="315" y="215" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="377" y="230" width="87" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ptzcqt_di" bpmnElement="Activity_1ptzcqt">
+        <dc:Bounds x="480" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1rnw4gw_di" bpmnElement="Activity_1rnw4gw">
+        <dc:Bounds x="450" y="280" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_17co0nu_di" bpmnElement="Gateway_17co0nu" isMarkerVisible="true">
+        <dc:Bounds x="665" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1m5sdt1_di" bpmnElement="Activity_1m5sdt1">
+        <dc:Bounds x="800" y="180" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1o80xj4_di" bpmnElement="Event_1o80xj4">
+        <dc:Bounds x="1002" y="192" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0g8r05t_di" bpmnElement="Flow_0g8r05t">
+        <di:waypoint x="188" y="240" />
+        <di:waypoint x="315" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19ytzx1_di" bpmnElement="Flow_19ytzx1">
+        <di:waypoint x="340" y="215" />
+        <di:waypoint x="340" y="120" />
+        <di:waypoint x="480" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="346" y="165" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vtv4d7_di" bpmnElement="Flow_1vtv4d7">
+        <di:waypoint x="340" y="265" />
+        <di:waypoint x="340" y="320" />
+        <di:waypoint x="450" y="320" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="349" y="290" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1frzcau_di" bpmnElement="Flow_1frzcau">
+        <di:waypoint x="580" y="120" />
+        <di:waypoint x="690" y="120" />
+        <di:waypoint x="690" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ybpnhm_di" bpmnElement="Flow_1ybpnhm">
+        <di:waypoint x="550" y="320" />
+        <di:waypoint x="690" y="320" />
+        <di:waypoint x="690" y="245" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ifnklz_di" bpmnElement="Flow_1ifnklz">
+        <di:waypoint x="715" y="220" />
+        <di:waypoint x="800" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k31swx_di" bpmnElement="Flow_1k31swx">
+        <di:waypoint x="900" y="220" />
+        <di:waypoint x="950" y="220" />
+        <di:waypoint x="950" y="210" />
+        <di:waypoint x="1002" y="210" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

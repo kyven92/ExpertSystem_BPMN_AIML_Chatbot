@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiml>
+    <topic name="BEGINNINGEVENT1">
+        <category>
+            <pattern>YES</pattern>
+            <that>* CHOOSE YES OR NO</that>
+            <template>YOUR CHOICE IS "YES" <srai>ACTIVITY1PTZCQT</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>NO</pattern>
+            <that>* CHOOSE YES OR NO</that>
+            <template>YOUR CHOICE IS "NO" <srai>ACTIVITY1RNW4GW</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>ACTIVITY1RNW4GW</pattern>
+            <template>THIS IS A DEMO TEST <srai>ACTIVITY1M5SDT1</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>ACTIVITY1PTZCQT</pattern>
+            <template>THIS IS A DEMO TEST <srai>ACTIVITY1M5SDT1</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>ACTIVITY1M5SDT1</pattern>
+            <template>
+                <think>
+                    <set name="topic"></set>
+                </think>
+            </template>
+        </category>
+    </topic>
+    <category>
+        <pattern>DEMO</pattern>
+        <template>
+            <think>
+                <set name="topic">BEGINNINGEVENT1</set>
+            </think>
+            <reply>
+                <text>
+                    CHOOSE YES OR NO
+                </text>
+
+            </reply> 
+        </template>
+    </category>
+</aiml>
