@@ -1,5 +1,9 @@
 Created Date: 12 Dec 2022
 
+
+Referenced from https://github.com/pemagrg1/Easy-Chatbot
+
+
 ## INSTALLATION:
 <br> `pip install -r requirements.txt`
 <br><br>
